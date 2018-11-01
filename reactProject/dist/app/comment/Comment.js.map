@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../app/comment/Comment.js"],"names":["Comment","React","Component"],"mappings":"AAAA;;;;AACA;;;;;;;;;;;;IACMA,O;;;;;;;;;;;iCACM;AACJ;AACH;;;;EAHkBC,gBAAMC,S","file":"Comment.js","sourcesContent":["'use strict';\r\nimport React from 'react';\r\nclass Comment extends  React.Component{\r\n    render(){\r\n        return\r\n    }\r\n}"]}
