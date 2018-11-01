@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../app/comment/CommentList.js"],"names":["CommentList","React","Component"],"mappings":"AAAA;;;;AACA;;;;;;;;;;;;IACMA,W;;;;;;;;;;;iCACM;AACJ;AACH;;;;EAHqBC,gBAAMC,S","file":"CommentList.js","sourcesContent":["'use strict';\r\nimport React from 'react';\r\nclass CommentList extends React.Component{\r\n    render(){\r\n        return\r\n    }\r\n}"]}

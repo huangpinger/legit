@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+		<title>贪吃蛇</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<script type="text/javascript" src="js/jquery-1.12.1.js"></script>
+	</head>
+	<body>
+		<div class="start-interface-box" id="start-interface-box">
+			<h1 class="guide1 positonAb">贪吃蛇</h1>
+			<h3 class="guide2 positonAb">snaker</h3>
+			<h2 class="guide3 positonAb littleFinger" onclick="enterGame()">进入游戏</h2>
+			<h2 class="guide4 positonAb littleFinger" onclick="setGame()">游戏设置</h2>
+			<h2 class="guide5 positonAb littleFinger" onclick="quitGame()">退出游戏</h2>
+		</div>
+		<div class="setModel-box" id="setModel-box">
+			<div class="setModel-layer-box"></div>
+			<div class="setModel-content-box">
+				<h3 style="text-align: center;">游戏设置</h3>
+				<div class="setContent-speed-box setModel-height">
+					<h4 style="display: inline;">游戏速度：</h4>&nbsp;
+					<input type="radio" name="speed" class="speed" value="200" id="highSpeed" />
+					<label for="highSpeed" class="littleFinger">高速</label>&nbsp;&nbsp;
+					<input type="radio" name="speed" class="speed" value="500" id="mediumSpeed" />
+					<label for="mediumSpeed" class="littleFinger">中速</label>&nbsp;&nbsp;
+					<input type="radio" name="speed" class="speed" value="800" id="lowSpeed"/>
+					<label for="lowSpeed" class="littleFinger">低速</label>
+				</div>
+				<div class="setModel-bg-box setModel-height">
+					<h4 style="display: inline;">背景图片：</h4>
+					<input type="radio" name="gameBGImgRadio" class="gameBGImgRadio" value="url(img/gameBGImg1.jpg)"id="gameBGImg1" />
+					<label for="gameBGImg1" class="littleFinger gameBGLabel">
+						<img style="width: 25px;height: 25px;" src="img/gameBGImg1.jpg"/>
+					</label>
+					<input type="radio" name="gameBGImgRadio" class="gameBGImgRadio" value="url(img/gameBGImg2.jpg)" id="gameBGImg2" />
+					<label for="gameBGImg2" class="littleFinger gameBGLabel">
+						<img style="width: 25px;height: 25px;" src="img/gameBGImg2.jpg"/>
+					</label>
+					<input type="radio" name="gameBGImgRadio" class="gameBGImgRadio" value="url(img/gameBGImg3.jpg)" id="gameBGImg3"/>
+					<label for="gameBGImg3" class="littleFinger gameBGLabel">
+						<img style="width: 25px;height: 25px;" src="img/gameBGImg3.jpg"/>
+					</label>
+				</div>
+				<div class="setContent-btn-box setModel-height">
+					<input type="button" value="确认" id="sureSet" onclick="sureSet()" />
+					<input type="button" value="取消" onclick="cancelSet()" id="cancelSet" />
+				</div>
+			</div>
+		</div>
+		<!--游戏界面-->
+		<div class="game-inter-box" id="game-inter-box">
+			<div class="left-side">
+				<div class="start-pause">
+					<img src="img/start.png" class="littleFinger" onclick="startPause()" id="startPause"/>
+				</div>
+			</div>
+			<div class="game-main">
+				<div class="game-main-header">
+					<div class="game-main-header-score fl">
+						<h3 style="display: inline;line-height: 40px;">&nbsp;分数&nbsp;&nbsp;&nbsp;</h3>
+						<span style="line-height: 40px;" id="score"></span>
+					</div>
+					<div class="game-main-header-whenUsed fl">
+						<div class="whenUsed-image">
+							<img src="img/clock.png"/>	
+						</div>&nbsp;&nbsp;&nbsp;
+						<span id="whenUsedTime"style="position: absolute;top: 10px;"></span>
+					</div>
+				</div>
+				<div class="game-main-content" id="gameMainContent">
+					
+				</div>
+			</div>
+			<div class="right-side">
+				<div class="best-score">
+					<h4 style="display: inline;">最佳分数：&nbsp;</h4>
+					<span id="bestScore">0</span>
+				</div>
+				<div class="space">
+					<h3>开始和暂停：</h3>
+					<img src="img/space.jpg"/>
+				</div>
+				<div class="key-down">
+					<h3>操作：</h3>
+					<img src="img/keyDown.jpg"/>
+				</div>
+			</div>
+		</div>
+		<!--失败弹框-->
+		<div class="loserModel" id="loserModel">
+			<div class="loserModel-layer"></div>
+			<div class="loserModel-content">
+				<img src="img/loser.png"/>
+				<div class="loserModel-info">
+					<p style="margin-bottom: 10px;">得分：
+						<span id="loserGetScore"></span>
+					</p>
+					<p>用时：<span id="loserUseTime"></span></p>
+				</div>
+				<div class="loserModel-button">
+					<input type="button" value="再来一局" class="playAgain" onclick="playAgain()" />
+					<input type="button" value="取消" class="cancelLoserModel"onclick="cancelLoser()" />
+				</div>
+			</div>
+		</div>
+		<script src="./js/snake.js"></script>
+	</body>
+</html>

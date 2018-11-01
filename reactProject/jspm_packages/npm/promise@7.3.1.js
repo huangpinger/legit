@@ -1,0 +1,1 @@
+module.exports = require("npm:promise@7.3.1/index.js");
